@@ -338,9 +338,11 @@
                   <li>
                     <a href="#version-dev" class="toc-h2 toc-link" data-title="Version DEV">Version DEV</a>
                   </li>
-                  <li>
-                    <a href="#introduction" class="toc-h2 toc-link" data-title="Introduction">Introduction</a>
-                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
                   <li>
                     <a href="#odpc-is-odps-native-but-not-odps-only" class="toc-h2 toc-link" data-title="ODPC is ODPS-native, but not ODPS-only">ODPC is ODPS-native, but not ODPS-only</a>
                   </li>
@@ -447,7 +449,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>Submit issues or suggestions to the specification maintainers</td>
 </tr>
 </tbody></table>
-<h2 id='introduction'>Introduction</h2>
+<h1 id='introduction'>Introduction</h1>
 <p>The Open Data Product Catalogs, ODPC, is a vendor-neutral, open-source, machine-readable catalog model for data product portfolios. It defines reusable catalog objects such as data product references, use cases, business objectives, KPIs, signals, and catalog items.</p>
 
 <p>ODPC is part of the OpenDataProducts.org standards family. It complements the Open Data Product Specification, ODPS, by adding the catalog and portfolio layer around individual data products.</p>
@@ -508,7 +510,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li>support machine-readable cataloging with YAML and schema validation</li>
 </ul>
 
-<p><strong>Note!</strong> In the &quot;Open Data Product&quot; focus is on the latter words and the prefix &quot;open&quot; refers to the openness of the standard. Any kind of connotations to open data are not intentional, intended, or desirable.</p>
+<p><strong>Note!</strong> In the &quot;Open Data Product&quot; focus is on the latter words and the prefix &quot;open&quot; refers to the openness of the standard. Any kind of 
+connotations to open data are not intentional, intended, or desirable.</p>
 <h2 id='core-design-principle'>Core design principle</h2>
 <p>The OpenDataProducts.org standards family follows a simple separation of concerns.</p>
 
@@ -518,7 +521,8 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <li><strong>ODPG defines the relationships.</strong></li>
 </ul>
 
-<p>This keeps each specification focused. ODPC should not redefine the full structure of a data product. That belongs to ODPS or to another source product model. ODPC should also not define graph traversal, graph analytics, or relationship semantics. Those belong to ODPG.</p>
+<p>This keeps each specification focused. ODPC should not redefine the full structure of a data product. That belongs to ODPS or to another source product model. 
+ODPC should also not define graph traversal, graph analytics, or relationship semantics. Those belong to <a href="https://opendataproducts.org/odpg-v1.0/">Open Data Product Graphs, ODPG</a>.</p>
 <h2 id='main-odpc-objects'>Main ODPC objects</h2>
 <blockquote>
 <p>Example of ProductReference:</p>
