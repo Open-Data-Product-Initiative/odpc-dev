@@ -8,144 +8,124 @@ A `Catalog` should provide identity, ownership, scope, lifecycle status, and ref
 
 By defining catalogs as machine-readable objects, ODPC supports interoperability between tools, platforms, marketplaces, AI workflows, and graph-based portfolio analysis.
 
-## Attributes and options
+## Mandatory attributes and options
 
-> Example of Catalog object usage:
+> Example of productReference object usage:
 
 ```yml
 catalog:
   id: CAT-001
   name:
-    en: Smart City Data Product Portfolio Catalog
+    en: Urban Mobility Data Product Catalog
   description:
-    en: Catalog of reusable data product portfolio objects for smart city planning and operations.
+    en: Catalog of data products, use cases, objectives, and signals related to urban mobility.
+```
+
+
+| Attribute | Type | Required | Description |
+|---|---|---:|---|
+| `catalog` | object | ✓ | Top-level object that defines an ODPC catalog. |
+| `id` | string | ✓ | Stable identifier for the catalog. |
+| `name` | object | ✓ | Human-readable catalog name using language-tagged strings. |
+| `name.en` | string | ✓ | English catalog name. |
+| `description` | object | ✓ | Short explanation of the catalog purpose and scope using language-tagged strings. |
+| `description.en` | string | ✓ | English catalog description. |
+
+
+## Optional attributes and options
+
+> Example of productReference object usage:
+
+```yml
+catalog:
+  id: CAT-001
+  name:
+    en: Urban Mobility Data Product Catalog
+  description:
+    en: Catalog of data products, use cases, objectives, and signals related to urban mobility.
+
   owner:
-    organization: Example Smart City Office
+    organization: Example Transport Authority
+    team: Business Analytics
     role: Data Product Portfolio Manager
+
   scope:
-    domain: smart-city
-    geography: Example City
+    domains:
+      - smart-city
+      - mobility
+      - transport
+    geography: Abu Dhabi
     audience:
       - internal
-      - partner
-  version: 1.0.0
+      - public
+
+  version: "1.0.0"
   status: active
+
+  graph:
+    standard: ODPG
+    version: "1.0"
+    uri: https://example.org/graphs/urban-mobility.graph.yaml
 
   productReferences:
     - id: DP-001
+      productID: urbanpulse-events
+      productVersion: "1.0.0"
       name:
         en: UrbanPulse Events Data Product
+      description:
+        en: Data product providing event information for urban analytics and citizen services.
       productModel:
         standard: ODPS
-        version: 4.1
+        version: "4.1"
         format: yaml
-      uri: https://example.org/products/urbanpulse-events/odps.yaml
-      status: active
-
-    - id: DP-002
-      name:
-        en: Traffic Flow Data Product
-      productModel:
-        standard: ODPS
-        version: 4.1
-        format: yaml
-      uri: https://example.org/products/traffic-flow/odps.yaml
-      status: active
-
-    - id: DP-003
-      name:
-        en: Emergency Incident Data Product
-      productModel:
-        standard: ODPS
-        version: 4.1
-        format: yaml
-      uri: https://example.org/products/emergency-incidents/odps.yaml
-      status: active
+        uri: https://example.org/products/urbanpulse-events/odps.yaml
 
   useCases:
     - id: UC-001
       name:
-        en: Emergency Response Optimization
-      expectedOutcome:
-        en: Reduce average emergency response time across the city.
-      status: active
-
-    - id: UC-002
-      name:
-        en: Event-Aware Traffic Planning
-      expectedOutcome:
-        en: Reduce congestion around major event locations.
-      status: active
+        en: Event Demand Forecasting
+      description:
+        en: Forecast event-related demand to improve mobility planning and citizen services.
 
   businessObjectives:
     - id: BO-001
       name:
-        en: Reduce Emergency Response Time
-      status: active
-
-    - id: BO-002
-      name:
-        en: Improve Event Mobility
-      status: active
-
-  kpis:
-    - id: KPI-001
-      name:
-        en: City Emergency Response Time
-      unit: minutes
-      target: 5
-      direction: at_most
-      status: active
-
-    - id: KPI-002
-      name:
-        en: Event Area Congestion Index
-      unit: percentage
-      target: -10
-      direction: decrease
-      status: active
+        en: Improve Urban Mobility Efficiency
+      description:
+        en: Reduce travel delays and improve movement across the city through better data-driven planning and operations.
 
   signals:
     - id: SIG-001
       name:
-        en: Rising Incident Delay Signal
-      signalType: risk
-      severity: high
-      status: active
-
-    - id: SIG-002
-      name:
-        en: High Event Congestion Signal
-      signalType: opportunity
-      severity: medium
-      status: active
+        en: Increasing Event Demand
+      description:
+        en: Indicates rising demand for event-related mobility and public service planning.
 
   tags:
     - smart-city
-    - portfolio
-    - data-products
+    - mobility
+    - events
 ```
 
-| Element                | Type             | Options                                             | Description                                                                                                      |
-| ---------------------- | ---------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| **catalog**            | object           | required                                            | Top-level object that defines an ODPC catalog.                                                                   |
-| **id**                 | string           | required                                            | Stable identifier for the catalog.                                                                               |
-| **name**               | object           | language-tagged strings                             | Human-readable catalog name.                                                                                     |
-| **description**        | object           | language-tagged strings                             | Short explanation of the catalog purpose and scope.                                                              |
-| **owner**              | object           | optional                                            | Ownership information for the catalog.                                                                           |
-| **organization**       | string           | optional                                            | Organization responsible for the catalog.                                                                        |
-| **role**               | string           | optional                                            | Responsible role, such as Data Product Portfolio Manager.                                                        |
-| **scope**              | object           | optional                                            | Defines the business, organizational, geographic, or audience scope of the catalog.                              |
-| **domain**             | string           | optional                                            | Domain covered by the catalog.                                                                                   |
-| **geography**          | string           | optional                                            | Geographic scope of the catalog, if relevant.                                                                    |
-| **audience**           | array of strings | e.g., `internal`, `partner`, `public`, `commercial` | Intended audience for catalog use.                                                                               |
-| **version**            | string           | optional                                            | Catalog version.                                                                                                 |
-| **status**             | string           | e.g., `draft`, `active`, `deprecated`, `retired`    | Lifecycle status of the catalog.                                                                                 |
-| **productReferences**  | array of objects | optional                                            | List of data product references included in the catalog. Each item follows the `productReference` object schema. |
-| **useCases**           | array of objects | optional                                            | List of use cases included in the catalog. Each item follows the `useCase` object schema.                        |
-| **businessObjectives** | array of objects | optional                                            | List of business objectives included in the catalog. Each item follows the `businessObjective` object schema.    |
-| **kpis**               | array of objects | optional                                            | List of KPIs included in the catalog. Each item follows the `kpi` object schema.                                 |
-| **signals**            | array of objects | optional                                            | List of signals included in the catalog. Each item follows the `signal` object schema.                           |
-| **tags**               | array of strings | optional                                            | Keywords used for search, grouping, and portfolio analysis.                                                      |
-
-
+| Attribute | Type | Required | Description |
+|---|---|---:|---|
+| `owner` | object |  | Ownership information for the catalog. |
+| `owner.organization` | string |  | Organization responsible for the catalog. |
+| `owner.team` | string |  | Team responsible for the catalog. |
+| `owner.role` | string |  | Responsible role, such as `Data Product Portfolio Manager`. |
+| `scope` | object |  | Business, organizational, geographic, or audience scope of the catalog. |
+| `scope.domains` | array of strings |  | Domains covered by the catalog. |
+| `scope.geography` | string |  | Geographic scope of the catalog, if relevant. |
+| `scope.audience` | array of strings |  | Intended audience for catalog use, such as `internal`, `partner`, `public`, or `commercial`. |
+| `version` | string |  | Catalog version. |
+| `status` | string |  | Lifecycle status of the catalog, such as `draft`, `active`, `deprecated`, or `retired`. |
+| `graph` | object |  | Defines the graph specification used to describe relationships between catalog objects. |
+| `graph.standard` | string | ✓ when `graph` is used | Graph standard used for relationship modeling, such as `ODPG`. |
+| `graph.version` | string | ✓ when `graph` is used | Version of the graph standard. |
+| `graph.uri` | string | ✓ when `graph` is used | URI pointing to the graph definition. |
+| `productReferences` | array of objects |  | List of data product references included in the catalog. Each item follows the `ProductReference` object schema. |
+| `useCases` | array of objects |  | List of use cases included in the catalog. Each item follows the `UseCase` object schema. |
+| `businessObjectives` | array of objects |  | List of business objectives included in the catalog. Each item follows the `BusinessObjective` object schema. |
+| `signals` | array of objects |  | List of signals included in the catalog. Each item follows the `Signal` object schema. |
+| `tags` | array of strings |  | Keywords used for search, grouping, filtering, and portfolio analysis. |
