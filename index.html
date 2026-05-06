@@ -831,6 +831,45 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p>By defining objectives as catalog objects, ODPC supports prioritization, investment decisions, governance reviews, AI-assisted portfolio analysis, and reporting on business value.</p>
 <h2 id='attributes-and-options'>Attributes and options</h2><h2 id='mandatory'>Mandatory</h2>
+<blockquote>
+<p>Example of BusinessObjective object usage:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight yaml"><code><span class="na">businessObjective</span><span class="pi">:</span>
+  <span class="na">id</span><span class="pi">:</span> <span class="s">BO-001</span>
+  <span class="na">name</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span> <span class="s">Improve Urban Mobility Efficiency</span>
+  <span class="na">description</span><span class="pi">:</span>
+    <span class="na">en</span><span class="pi">:</span> <span class="s">Reduce travel delays and improve movement across the city through better data-driven planning and operations.</span>
+  <span class="na">strategicAlignment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Smart City Vision </span><span class="m">2030</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Transport Digital Transformation Program</span>
+  <span class="na">owner</span><span class="pi">:</span>
+    <span class="na">organization</span><span class="pi">:</span> <span class="s">Example Transport Authority</span>
+    <span class="na">team</span><span class="pi">:</span> <span class="s">Business Analytics</span>
+    <span class="na">role</span><span class="pi">:</span> <span class="s">Strategy Lead</span>
+  <span class="na">expectedOutcomes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Shorter average travel times across key corridors.</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Improved public transport reliability.</span>
+    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Better coordination between road, traffic, and public transport operations.</span>
+  <span class="na">kpis</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">KPI-001</span>
+      <span class="na">name</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Average Travel Time Reduction</span>
+      <span class="na">description</span><span class="pi">:</span>
+        <span class="na">en</span><span class="pi">:</span> <span class="s">Measures reduction in average travel time across selected mobility corridors.</span>
+      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
+      <span class="na">baseline</span><span class="pi">:</span>
+        <span class="na">value</span><span class="pi">:</span> <span class="m">0</span>
+        <span class="na">date</span><span class="pi">:</span> <span class="s">2025-10-31</span>
+      <span class="na">target</span><span class="pi">:</span>
+        <span class="na">value</span><span class="pi">:</span> <span class="m">10</span>
+        <span class="na">date</span><span class="pi">:</span> <span class="s">2026-12-31</span>
+  <span class="na">timeframe</span><span class="pi">:</span>
+    <span class="na">startDate</span><span class="pi">:</span> <span class="s">2026-01-01</span>
+    <span class="na">endDate</span><span class="pi">:</span> <span class="s">2026-12-31</span>
+  <span class="na">status</span><span class="pi">:</span> <span class="s">active</span>
+  <span class="na">priority</span><span class="pi">:</span> <span class="s">high</span>
+</code></pre></div>
 <table><thead>
 <tr>
 <th>Element</th>
@@ -876,46 +915,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 <td>English description of the business objective.</td>
 </tr>
 </tbody></table>
-
-<blockquote>
-<p>Example of BusinessObjective object usage:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight yaml"><code><span class="na">businessObjective</span><span class="pi">:</span>
-  <span class="na">id</span><span class="pi">:</span> <span class="s">BO-001</span>
-  <span class="na">name</span><span class="pi">:</span>
-    <span class="na">en</span><span class="pi">:</span> <span class="s">Improve Urban Mobility Efficiency</span>
-  <span class="na">description</span><span class="pi">:</span>
-    <span class="na">en</span><span class="pi">:</span> <span class="s">Reduce travel delays and improve movement across the city through better data-driven planning and operations.</span>
-  <span class="na">strategicAlignment</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Smart City Vision </span><span class="m">2030</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Transport Digital Transformation Program</span>
-  <span class="na">owner</span><span class="pi">:</span>
-    <span class="na">organization</span><span class="pi">:</span> <span class="s">Example Transport Authority</span>
-    <span class="na">team</span><span class="pi">:</span> <span class="s">Business Analytics</span>
-    <span class="na">role</span><span class="pi">:</span> <span class="s">Strategy Lead</span>
-  <span class="na">expectedOutcomes</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Shorter average travel times across key corridors.</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Improved public transport reliability.</span>
-    <span class="pi">-</span> <span class="na">en</span><span class="pi">:</span> <span class="s">Better coordination between road, traffic, and public transport operations.</span>
-  <span class="na">kpis</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">KPI-001</span>
-      <span class="na">name</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">Average Travel Time Reduction</span>
-      <span class="na">description</span><span class="pi">:</span>
-        <span class="na">en</span><span class="pi">:</span> <span class="s">Measures reduction in average travel time across selected mobility corridors.</span>
-      <span class="na">unit</span><span class="pi">:</span> <span class="s">percentage</span>
-      <span class="na">baseline</span><span class="pi">:</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="m">0</span>
-        <span class="na">date</span><span class="pi">:</span> <span class="s">2025-10-31</span>
-      <span class="na">target</span><span class="pi">:</span>
-        <span class="na">value</span><span class="pi">:</span> <span class="m">10</span>
-        <span class="na">date</span><span class="pi">:</span> <span class="s">2026-12-31</span>
-  <span class="na">timeframe</span><span class="pi">:</span>
-    <span class="na">startDate</span><span class="pi">:</span> <span class="s">2026-01-01</span>
-    <span class="na">endDate</span><span class="pi">:</span> <span class="s">2026-12-31</span>
-  <span class="na">status</span><span class="pi">:</span> <span class="s">active</span>
-  <span class="na">priority</span><span class="pi">:</span> <span class="s">high</span>
-</code></pre></div><h2 id='optional'>Optional</h2>
+<h2 id='optional'>Optional</h2>
 <table><thead>
 <tr>
 <th>Element</th>
