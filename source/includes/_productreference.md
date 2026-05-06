@@ -1,12 +1,16 @@
 # ProductReference
 
-The `ProductReference` object connects an ODPC catalog to the actual source definition of a data product. It does not redefine the full data product. It provides a stable catalog-level reference to a product described in ODPS, DPDS, an internal enterprise template, a vendor catalog, a marketplace definition, or another metadata source.
+The `ProductReference` object defines a lightweight catalog reference to a data product. It identifies the product, provides the key information needed for catalog discovery, and points to the authoritative product definition through `productModel`.
 
-`ProductReference` is the bridge between the portfolio layer and the product definition layer. It allows catalogs, use cases, objectives, KPIs, and signals to point to data products without copying the full product metadata into ODPC.
+In ODPC, a `ProductReference` is used to list, search, filter, and display data products as part of a portfolio. It should include enough information for users and tools to understand what the product is, who owns it, what domain it belongs to, what type of product it is, and where the full product definition is located.
 
-A `ProductReference` should include enough information for discovery, ownership, lifecycle visibility, and system integration. The complete product details remain in the source model referenced by `uri`, `identifier`, or another system-specific reference.
+The `ProductReference` object should stay lightweight. It should not duplicate detailed product metadata such as data access, SLA, data quality, license, pricing, support, or technical interface details. Those details belong in the referenced product model, such as ODPS.
 
-By separating the catalog reference from the source product definition, ODPC supports mixed data product environments where products may be described using different standards, platforms, and internal models.
+ODPC is ODPS-native, but not ODPS-only. A `ProductReference` can point to an ODPS file or another product definition model through `productModel`.
+
+Connections between products, use cases, business objectives, KPIs, signals, and other catalog objects belong to Open Data Product Graphs (ODPG). ODPG defines the graphs and relationships between catalog objects, while ODPC defines the reusable catalog objects themselves.
+
+By defining product references as catalog objects, ODPC supports product discovery, portfolio browsing, filtering, prioritization, governance review, and AI-assisted portfolio analysis.
 
 ## Mandatory attributes and options
 
