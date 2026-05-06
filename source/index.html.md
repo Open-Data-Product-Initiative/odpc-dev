@@ -98,7 +98,8 @@ ODPC aims to:
 * provide the reusable object layer for Open Data Product Graphs, ODPG
 * support machine-readable cataloging with YAML and schema validation
 
-**Note!** In the "Open Data Product" focus is on the latter words and the prefix "open" refers to the openness of the standard. Any kind of connotations to open data are not intentional, intended, or desirable.
+**Note!** In the "Open Data Product" focus is on the latter words and the prefix "open" refers to the openness of the standard. Any kind of 
+connotations to open data are not intentional, intended, or desirable.
 
 ## Core design principle
 The OpenDataProducts.org standards family follows a simple separation of concerns.
@@ -107,7 +108,8 @@ The OpenDataProducts.org standards family follows a simple separation of concern
 * **ODPC defines the reusable portfolio objects.**
 * **ODPG defines the relationships.**
 
-This keeps each specification focused. ODPC should not redefine the full structure of a data product. That belongs to ODPS or to another source product model. ODPC should also not define graph traversal, graph analytics, or relationship semantics. Those belong to ODPG.
+This keeps each specification focused. ODPC should not redefine the full structure of a data product. That belongs to ODPS or to another source product model. 
+ODPC should also not define graph traversal, graph analytics, or relationship semantics. Those belong to [Open Data Product Graphs, ODPG](https://opendataproducts.org/odpg-v1.0/).
 
 ## Main ODPC objects
 > Example of ProductReference:
