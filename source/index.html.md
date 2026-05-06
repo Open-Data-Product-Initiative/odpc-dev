@@ -47,7 +47,7 @@ The Open Data Product Catalogs, ODPC, is a vendor-neutral, open-source, machine-
 
 ODPC is part of the OpenDataProducts.org standards family. It complements the Open Data Product Specification, ODPS, by adding the catalog and portfolio layer around individual data products.
 
-ODPS defines one data product. ODPC defines the reusable portfolio objects around data products. Open Data Product Graphs, ODPG, defines the relationships between those objects.
+ODPS defines one data product. ODPC defines the reusable portfolio objects around data products. [Open Data Product Graphs, ODPG](https://opendataproducts.org/odpg-v1.0/), defines the relationships between those objects.
 
 The goal of ODPC is to help organizations move from isolated data product descriptions to managed data product portfolios that connect products to demand, use cases, business objectives, and measurable outcomes.
 
@@ -140,16 +140,10 @@ The first version of ODPC focuses on these objects:
 * ProductReference
 * UseCase
 * BusinessObjective
-* KPI
 * Signal
 * Catalog
-* CatalogItem
 
 These objects are designed to be reusable across catalogs, tools, AI workflows, and graph models.
 
-## ProductReference
 
-ProductReference is the bridge between ODPC and the actual source product definition.
-
-It can point to an ODPS file, a DPDS descriptor, an internal product model, a vendor catalog asset, or another metadata source.
 
