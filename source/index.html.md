@@ -39,6 +39,9 @@ Development of the specification is under the umbrella of the Linux Foundation.
 | Topic | Link | Description |
 |---|---|---|
 | Version source | <a href="https://github.com/Open-Data-Product-Initiative/odpc-v1.0">Open Data Product Catalogs on GitHub</a> | Official source repository for the ODPC specification |
+| ODPC YAML schema | <a href="https://opendataproducts.org/odpc-v1.0/schema/odpc.yaml">YAML Schema</a> | Machine-readable schema definition in YAML format |
+| ODPC JSON schema | <a href="https://opendataproducts.org/odpc-v1.0/schema/odpc.json">JSON Schema</a> | Machine-readable schema definition in JSON format |
+| Knowledge Base | [Open Data Product Spec Family Knowledge Base](https://opendataproducts.org/howto/) | Practical examples, FAQs, and implementation guidance |
 | Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/issues) | Submit issues or suggestions to the specification maintainers |
 
 # Introduction
