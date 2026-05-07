@@ -10,11 +10,11 @@ toc_footers:
   - <br/>Linux Foundation</a>
 
 includes:
+- catalog
 - productreference
 - usecase
 - businessobjective
 - signal
-- catalog
 - contributors
 - terms
 
