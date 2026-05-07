@@ -77,9 +77,7 @@ Data product management does not stop at one product. Organizations need to unde
 
 A catalog should not only list products. It should help organizations manage data products as a portfolio.
 
-ODPC defines the structure for that portfolio layer.
-
-It enables organizations to catalog:
+ODPC defines the structure for that portfolio layer. It enables organizations to catalog:
 
 * data products
 * use cases
@@ -90,6 +88,9 @@ It enables organizations to catalog:
 * references to source definitions
 
 This creates a reusable foundation for discovery, governance, prioritization, AI-assisted planning, and graph-based portfolio analysis.
+
+**ODPC organizes the portfolio. ODPG connects the portfolio. GraphRAG makes the connected portfolio usable by AI assistants for discovery, gap analysis, impact mapping, and decision support.**
+
 
 ## Specification aims and aspects
 ODPC aims to:
