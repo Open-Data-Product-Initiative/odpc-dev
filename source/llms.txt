@@ -93,6 +93,36 @@ Modeling constraints:
 - Prefer stable identifiers for catalog objects so they can be referenced by catalogs, tools, and graph implementations.
 - Do not redefine official ODPC objects or invent new meanings for existing objects. Use extensions for local additions.
 
+Extension guidance:
+- Use extension fields only when the needed metadata is local, implementation-specific, platform-specific, experimental, or not yet part of the official ODPC object model.
+- Extension field names MUST begin with `x-`, for example `x-internal-id`, `x-source-system`, `x-platform-url`, `x-ingestion-job`, or `x-review-workflow`.
+- Extension fields may appear inside ODPC objects such as Catalog, ProductReference, UseCase, BusinessObjective, KPI, Signal, and nested support objects where the schema allows `x-` pattern properties.
+- Extension values may be null, strings, numbers, booleans, arrays, or objects. Prefer simple scalar values for identifiers and URLs, and objects only when the extension has multiple related fields.
+- Use extensions for local integration details such as internal system ids, workflow state, platform URLs, ingestion job ids, UI hints, sync timestamps, review metadata, or source-system traceability.
+- Do not use extensions to replace official ODPC fields. If an official field exists, use it instead of an `x-` field.
+- Do not use extensions to change the meaning of official ODPC objects or fields. For example, do not use `x-use-case` to make a ProductReference behave like a UseCase.
+- Do not use extensions for graph relationships, relationship semantics, nodes, edges, traversal rules, or GraphRAG structures. Use ODPG for those.
+- Do not use extensions to copy full ODPS product metadata into ProductReference. ProductReference should remain lightweight and point to the authoritative product model through `productModel`.
+- Do not use extensions for shared vocabulary terms or relationship names that should come from ODPV.
+- If an extension becomes broadly useful across catalogs or organizations, treat it as a candidate for a future ODPC field and propose it through GitHub issues instead of relying on a private meaning.
+- Agents should preserve existing `x-` fields when repairing or transforming ODPC files unless the user explicitly asks to remove them.
+- Agents may ignore unknown `x-` fields when reading ODPC files, but should not silently move extension data into official fields unless the mapping is obvious and semantics are unchanged.
+
+Extension example:
+```yaml
+catalog:
+  id: CAT-001
+  name:
+    en: Urban Mobility Data Product Catalog
+  description:
+    en: Catalog of reusable portfolio objects related to urban mobility.
+  x-internal-id: foobar123
+  x-source-system: internal-catalog-platform
+  x-sync:
+    jobId: sync-2026-05-10-001
+    lastSyncedAt: 2026-05-10T12:00:00Z
+```
+
 When returning or generating an ODPC object, include when available:
 - version
 - object type
