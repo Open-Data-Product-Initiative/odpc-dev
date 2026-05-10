@@ -1,4 +1,4 @@
-# Catalog Toolkit for Tools and AI Agents
+# Catalog Toolkit
 
 > Snippet of YAML version:
 
