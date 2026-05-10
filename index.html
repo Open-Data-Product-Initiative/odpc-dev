@@ -694,6 +694,8 @@ When working from the source repository, use scripts/search_objects.py for repea
 Use scripts/search_objects.py --json when another tool or agent will consume the result.
 Use scripts/validate_catalog.py to validate ODPC YAML or JSON catalog files against source/schema/odpc.yaml.
 Use scripts/check_agent_artifacts.py in CI or review workflows to detect drift between schema, catalog artifacts, examples, and llms.txt.
+Use scripts/generate_catalog_artifacts.py after editing source/schema/odpc.yaml to regenerate source/schema/odpc.json; use --check in CI or review workflows.
+Use scripts/explain_catalog.py to summarize an ODPC catalog file for humans or AI agents.
 Install script dependencies with python3 -m pip install -r scripts/requirements-agent.txt.
 Do not edit generated or derived artifacts without checking alignment across llms.txt, schema files, catalog artifacts, examples, and tests.
 -->
@@ -709,12 +711,20 @@ Do not edit generated or derived artifacts without checking alignment across llm
 <td>Checks schema alignment, example files, object JSONL records, and <code>llms.txt</code> references</td>
 </tr>
 <tr>
+<td><a href="https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/generate_catalog_artifacts.py"><code>generate_catalog_artifacts.py</code></a></td>
+<td>Regenerates derived catalog artifacts such as <code>source/schema/odpc.json</code> from canonical source files; use <code>--check</code> to detect drift</td>
+</tr>
+<tr>
 <td><a href="https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/search_objects.py"><code>search_objects.py</code></a></td>
 <td>Searches ODPC object records by keyword or exact object id; use <code>--json</code> for machine-readable results</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/validate_catalog.py"><code>validate_catalog.py</code></a></td>
 <td>Validates ODPC YAML or JSON catalog files against the ODPC schema</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/explain_catalog.py"><code>explain_catalog.py</code></a></td>
+<td>Summarizes an ODPC catalog file, including counts, ids, graph reference, and modeling hints</td>
 </tr>
 </tbody></table>
 
