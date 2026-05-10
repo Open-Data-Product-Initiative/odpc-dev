@@ -7,7 +7,7 @@ Base URL:
 
 Human-readable specification:
 - / (https://opendataproducts.org/odpc-v1.0/)
-- The "AI Agent Usage Guide" section explains how agents should select objects, generate ODPC YAML, validate files, and decide when to use ODPS, ODPG, or ODPV.
+- The "Catalog Toolkit for Tools and AI Agents" section lists the published resource files, validation schemas, catalog examples, retrieval file, and source helper scripts.
 
 Standards-family context:
 - ODPS is the Open Data Product Specification. Use ODPS when describing one data product and its detailed product metadata. Homepage: https://opendataproducts.org/

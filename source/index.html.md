@@ -10,7 +10,7 @@ toc_footers:
   - <br/>Linux Foundation</a>
 
 includes:
-- ai-agent-usage
+- toolkit
 - catalog
 - productreference
 - usecase
@@ -149,4 +149,3 @@ The first version of ODPC focuses on these objects:
 * Catalog
 
 These objects are designed to be reusable across catalogs, tools, AI workflows, and graph models.
-
