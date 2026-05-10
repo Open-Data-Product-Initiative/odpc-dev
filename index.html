@@ -2235,7 +2235,7 @@ Do not edit generated or derived artifacts without checking alignment across llm
 <li><a href="https://www.linkedin.com/in/jarkkomoilanen/">Jarkko Moilanen</a></li>
 </ul>
 <h1 id='terms-used'>Terms used</h1>
-<p>ODPC uses the <a href="https://opendataproducts.org/odpv-v1.0/">Open Data Product Vocabulary, ODPV</a>, as the shared vocabulary for the OpenDataProducts.org standards family. Use ODPV for common terms, stable ids, labels, definitions, aliases, and relationship names across ODPS, ODPC, and ODPG.</p>
+<p>ODPC uses the <a href="https://opendataproducts.org/odpv-v1.0/">Open Data Product Vocabulary, ODPV</a>, as the shared vocabulary for the OpenDataProducts.org standards family. Use ODPV for common terms, stable ids, labels, definitions, aliases, and relationship names across ODPS, ODPC, and ODPG. For machine-readable lookup, use the ODPV term records at <a href="https://opendataproducts.org/odpv-v1.0/vocab/terms.jsonl">ODPV terms.jsonl</a>.</p>
 
 <p>The terms below explain ODPC-specific usage where this specification gives a shared vocabulary term a concrete catalog-object shape, field-level meaning, or modeling constraint.</p>
 <h2 id='shared-terms-from-odpv'>Shared terms from ODPV</h2>
@@ -2248,57 +2248,57 @@ Do not edit generated or derived artifacts without checking alignment across llm
 </thead><tbody>
 <tr>
 <td>Data product catalog</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/DataProductCatalog"><code>DataProductCatalog</code></a></td>
+<td><code>DataProductCatalog</code></td>
 <td>Implemented in ODPC as the <code>Catalog</code> object.</td>
 </tr>
 <tr>
 <td>Use case</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/UseCase"><code>UseCase</code></a></td>
+<td><code>UseCase</code></td>
 <td>Implemented in ODPC as the <code>UseCase</code> object.</td>
 </tr>
 <tr>
 <td>Business objective</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/BusinessObjective"><code>BusinessObjective</code></a></td>
+<td><code>BusinessObjective</code></td>
 <td>Implemented in ODPC as the <code>BusinessObjective</code> object.</td>
 </tr>
 <tr>
 <td>KPI</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/KPI"><code>KPI</code></a></td>
+<td><code>KPI</code></td>
 <td>In ODPC, KPIs are nested inside <code>BusinessObjective.kpis</code>, not defined as top-level catalog objects.</td>
 </tr>
 <tr>
 <td>Signal</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/Signal"><code>Signal</code></a></td>
+<td><code>Signal</code></td>
 <td>Implemented in ODPC as the <code>Signal</code> object.</td>
 </tr>
 <tr>
 <td>Data need</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/DataNeed"><code>DataNeed</code></a></td>
+<td><code>DataNeed</code></td>
 <td>Represented in ODPC through <code>UseCase.dataNeeds</code>.</td>
 </tr>
 <tr>
 <td>Data product graph</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/DataProductGraph"><code>DataProductGraph</code></a></td>
+<td><code>DataProductGraph</code></td>
 <td>Referenced from ODPC through <code>Catalog.graph</code>; graph structures belong to ODPG or another graph standard.</td>
 </tr>
 <tr>
 <td>Identifier</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/Identifier"><code>Identifier</code></a></td>
+<td><code>Identifier</code></td>
 <td>Used in ODPC object <code>id</code> fields.</td>
 </tr>
 <tr>
 <td>Reference</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/Reference"><code>Reference</code></a></td>
+<td><code>Reference</code></td>
 <td>Used in ODPC for pointers such as <code>ProductReference.productModel.uri</code> and <code>Catalog.graph.uri</code>.</td>
 </tr>
 <tr>
 <td>Owner</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/Owner"><code>Owner</code></a></td>
+<td><code>Owner</code></td>
 <td>Used in ODPC <code>owner</code> fields for accountable organizations, teams, or roles.</td>
 </tr>
 <tr>
 <td>Domain</td>
-<td><a href="https://opendataproducts.org/odpv-v1.0/terms/Domain"><code>Domain</code></a></td>
+<td><code>Domain</code></td>
 <td>Used in ODPC <code>domains</code> and <code>scope.domains</code> fields for catalog grouping and filtering.</td>
 </tr>
 </tbody></table>
