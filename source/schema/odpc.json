@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "ODPS schema",
-    "description": "This is the schema for ODPS v4.1.",
+    "title": "ODPC schema",
+    "description": "This is the schema for ODPC v1.0.",
     "type": "object",
     "properties": {
         "schema": {
