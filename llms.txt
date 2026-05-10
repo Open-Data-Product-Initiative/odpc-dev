@@ -33,9 +33,9 @@ Example files:
 
 Agent-oriented source scripts:
 - scripts/check_agent_artifacts.py checks schema alignment, example files, object JSONL records, and llms.txt references.
-- scripts/generate_catalog_artifacts.py regenerates derived catalog artifacts such as source/schema/odpc.json from canonical source/schema/odpc.yaml. Use `python3 scripts/generate_catalog_artifacts.py --check` to detect drift.
+- scripts/generate_catalog_artifacts.py regenerates derived catalog artifacts such as source/schema/odpc.json from canonical source/schema/odpc.yaml. Use `python scripts/generate_catalog_artifacts.py --check` to detect drift.
 - scripts/search_objects.py searches /catalog/objects.jsonl by keyword or exact object id. Use `--json` for machine-readable results.
-- scripts/validate_catalog.py validates ODPC YAML or JSON catalog files against /schema/odpc.yaml. Install dependencies with `python3 -m pip install -r scripts/requirements-agent.txt`.
+- scripts/validate_catalog.py validates ODPC YAML or JSON catalog files against /schema/odpc.yaml. Install dependencies with `python -m pip install -r scripts/requirements-agent.txt`.
 - scripts/explain_catalog.py summarizes an ODPC catalog file for humans or AI agents, including object counts, ids, graph reference, and modeling hints.
 
 Source repository:
