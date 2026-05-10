@@ -31,6 +31,11 @@ Example files:
 - /examples/business-objective-with-kpis.yaml (https://opendataproducts.org/odpc-v1.0/examples/business-objective-with-kpis.yaml)
 - /examples/signal.yaml (https://opendataproducts.org/odpc-v1.0/examples/signal.yaml)
 
+Agent-oriented source scripts:
+- scripts/check_agent_artifacts.py checks schema alignment, example files, object JSONL records, and llms.txt references.
+- scripts/search_objects.py searches /objects/odpc-objects.jsonl by keyword or exact object id. Use `--json` for machine-readable results.
+- scripts/validate_catalog.py validates ODPC YAML or JSON catalog files against /schema/odpc.yaml. Install dependencies with `python3 -m pip install -r scripts/requirements-agent.txt`.
+
 Source repository:
 - https://github.com/Open-Data-Product-Initiative/odpc-v1.0
 
@@ -60,15 +65,16 @@ Recommended agent workflow:
 3. Load /examples/*.yaml when generating ODPC catalog content.
 4. Load the human-readable ODPC specification when you need object definitions, examples, or attribute-level guidance.
 5. Use /schema/odpc.yaml or /schema/odpc.json to validate ODPC catalog files.
-6. Use Catalog for portfolio containers and catalog-level metadata.
-7. Use ProductReference for lightweight references to data products; do not copy full ODPS product metadata into ProductReference.
-8. Use UseCase for demand, user needs, business problems, analytical needs, or operational scenarios.
-9. Use BusinessObjective for strategic or operational outcomes, and nest KPIs inside BusinessObjective.
-10. Use Signal for demand signals, risk signals, opportunity signals, quality signals, performance signals, trend signals, or external change signals.
-11. Use ODPG, not ODPC, for explicit relationships between catalog objects.
-12. Use ODPV terms when stable shared ids, labels, definitions, or relationship names are needed.
-13. Include the ODPC version when generating structured catalog outputs.
-14. If no ODPC object fits a concept, treat it as an extension candidate instead of inventing a new meaning for an official ODPC object.
+6. If working in the source repository, use scripts/search_objects.py for repeatable local object lookup and scripts/validate_catalog.py for catalog validation.
+7. Use Catalog for portfolio containers and catalog-level metadata.
+8. Use ProductReference for lightweight references to data products; do not copy full ODPS product metadata into ProductReference.
+9. Use UseCase for demand, user needs, business problems, analytical needs, or operational scenarios.
+10. Use BusinessObjective for strategic or operational outcomes, and nest KPIs inside BusinessObjective.
+11. Use Signal for demand signals, risk signals, opportunity signals, quality signals, performance signals, trend signals, or external change signals.
+12. Use ODPG, not ODPC, for explicit relationships between catalog objects.
+13. Use ODPV terms when stable shared ids, labels, definitions, or relationship names are needed.
+14. Include the ODPC version when generating structured catalog outputs.
+15. If no ODPC object fits a concept, treat it as an extension candidate instead of inventing a new meaning for an official ODPC object.
 
 Object selection guidance:
 - Use Catalog when describing the portfolio, catalog scope, audience, domains, owner, status, tags, included reusable objects, or graph implementation reference.

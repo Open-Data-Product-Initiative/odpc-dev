@@ -12,6 +12,17 @@ Agents SHOULD use ODPC resources in this order:
 4. Use `/schema/odpc.yaml` or `/schema/odpc.json` to validate catalog files.
 5. Use the human-readable specification when object definitions, examples, and attribute explanations are needed.
 
+When working from the source repository, agents MAY use the helper scripts in `scripts/`:
+
+```bash
+python3 scripts/check_agent_artifacts.py
+python3 scripts/search_objects.py demand --json
+python3 scripts/search_objects.py --id ProductReference
+python3 scripts/validate_catalog.py source/examples/minimal-catalog.yaml
+```
+
+The validation script requires the packages listed in `scripts/requirements-agent.txt`.
+
 ## Common agent tasks
 
 | Task | Recommended ODPC resource | Notes |
