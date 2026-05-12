@@ -490,7 +490,7 @@ Development of the specification is under the umbrella of the Linux Foundation. 
 
 <p>ODPC is part of the OpenDataProducts.org standards family. It complements the Open Data Product Specification, ODPS, by adding the catalog and portfolio layer around individual data products.</p>
 
-<p><img src="images/odpc-3c2a5c82.png" width="600"></p>
+<p><img src="images/odpc-3c2a5c82.png" width="750"></p>
 
 <p>ODPS defines one data product. ODPC defines the reusable portfolio objects around data products. <a href="https://opendataproducts.org/odpg-v1.0/">Open Data Product Graphs, ODPG</a> defines the relationships between those objects.</p>
 
@@ -852,7 +852,7 @@ Do not edit generated or derived artifacts without checking alignment across llm
         <span class="na">standard</span><span class="pi">:</span> <span class="s">ODPS</span>
         <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">4.1"</span>
         <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
-        <span class="na">uri</span><span class="pi">:</span> <span class="s">https://example.org/products/urba/odps.yaml</span>
+        <span class="s">$ref</span><span class="pi">:</span> <span class="s">./products/urba/odps.yaml</span>
 
   <span class="na">useCases</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">UC-001</span>
@@ -1038,7 +1038,7 @@ Do not edit generated or derived artifacts without checking alignment across llm
     <span class="na">standard</span><span class="pi">:</span> <span class="s">ODPS</span>
     <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">4.1"</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
-    <span class="na">uri</span><span class="pi">:</span> <span class="s">https://example.org/products/urbanpulse-events/odps.yaml</span>
+    <span class="s">$ref</span><span class="pi">:</span> <span class="s">./odps.yaml</span>
 </code></pre></div>
 <table><thead>
 <tr>
@@ -1118,13 +1118,13 @@ Do not edit generated or derived artifacts without checking alignment across llm
 <td><code>productModel.format</code></td>
 <td>string</td>
 <td>required</td>
-<td>Format of the referenced product model, such as <code>yaml</code>, <code>json</code>, or <code>html</code>.</td>
+<td>Format of the referenced product model, such as <code>yaml</code>, <code>json</code>, <code>toon</code> or <code>html</code>.</td>
 </tr>
 <tr>
-<td><code>productModel.uri</code></td>
+<td><code>productModel.$ref</code></td>
 <td>string</td>
 <td>required</td>
-<td>URI pointing to the authoritative product definition.</td>
+<td>ODPS-aligned reference to the authoritative product definition, as a local file path or URL.</td>
 </tr>
 </tbody></table>
 <h2 id='optional-attributes-and-options'>Optional attributes and options</h2>
@@ -1179,7 +1179,7 @@ Do not edit generated or derived artifacts without checking alignment across llm
     <span class="na">standard</span><span class="pi">:</span> <span class="s">ODPS</span>
     <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">4.1"</span>
     <span class="na">format</span><span class="pi">:</span> <span class="s">yaml</span>
-    <span class="na">uri</span><span class="pi">:</span> <span class="s">https://example.org/products/urbanpulse-events/odps.yaml</span>
+    <span class="s">$ref</span><span class="pi">:</span> <span class="s">https://example.org/products/urbanpulse-events/odps.yaml</span>
 
   <span class="na">logoURL</span><span class="pi">:</span> <span class="s">https://example.org/assets/urbanpulse-logo.png</span>
 
@@ -2289,7 +2289,7 @@ Do not edit generated or derived artifacts without checking alignment across llm
 <tr>
 <td>Reference</td>
 <td><code>Reference</code></td>
-<td>Used in ODPC for pointers such as <code>ProductReference.productModel.uri</code> and <code>Catalog.graph.uri</code>.</td>
+<td>Used in ODPC for pointers such as <code>ProductReference.productModel.$ref</code> and <code>Catalog.graph.uri</code>.</td>
 </tr>
 <tr>
 <td>Owner</td>
@@ -2319,7 +2319,7 @@ Do not edit generated or derived artifacts without checking alignment across llm
 </tr>
 <tr>
 <td><code>ProductModel</code></td>
-<td>The authoritative model or specification used to define a referenced data product, such as <code>ODPS</code>, <code>DPDS</code>, or an internal product model. In ODPC, <code>productModel.uri</code> points to the source product definition.</td>
+<td>The authoritative model or specification used to define a referenced data product, such as <code>ODPS</code>, <code>DPDS</code>, or an internal product model. In ODPC, <code>productModel.$ref</code> points to the source product definition as a local file path or URL.</td>
 </tr>
 <tr>
 <td><code>Portfolio object</code></td>

@@ -114,7 +114,7 @@
         "standard",
         "version",
         "format",
-        "uri"
+        "$ref"
       ],
       "properties": {
         "standard": {
@@ -134,9 +134,8 @@
             "other"
           ]
         },
-        "uri": {
-          "type": "string",
-          "format": "uri"
+        "$ref": {
+          "type": "string"
         }
       },
       "patternProperties": {

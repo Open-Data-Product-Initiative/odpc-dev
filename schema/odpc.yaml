@@ -89,7 +89,7 @@ $defs:
       - standard
       - version
       - format
-      - uri
+      - "$ref"
     properties:
       standard:
         type: string
@@ -104,9 +104,8 @@ $defs:
           - markdown
           - api
           - other
-      uri:
+      "$ref":
         type: string
-        format: uri
     patternProperties:
       "^x-": {}
 

@@ -90,7 +90,7 @@ Object selection guidance:
 Modeling constraints:
 - ODPC defines reusable catalog objects. It does not define full data product metadata; use ODPS or another referenced product model for that.
 - ODPC defines catalog structure. It does not define graph traversal, graph analytics, or relationship semantics; use [ODPG](https://opendataproducts.org/odpg-v1.0/) for that.
-- ProductReference.productModel.uri should point to the authoritative product definition.
+- ProductReference.productModel.$ref should point to the authoritative product definition as a local file path or URL.
 - Language-tagged strings commonly use name.en and description.en.
 - Prefer stable identifiers for catalog objects so they can be referenced by catalogs, tools, and graph implementations.
 - Do not redefine official ODPC objects or invent new meanings for existing objects. Use extensions for local additions.
