@@ -32,7 +32,7 @@ productReference:
     standard: ODPS
     version: "4.1"
     format: yaml
-    uri: https://example.org/products/urbanpulse-events/odps.yaml
+    $ref: ./odps.yaml
 ```
 
 | Attribute               | Type   | Options                           | Description                                                                                      |
@@ -49,7 +49,7 @@ productReference:
 | `productModel.standard` | string | required                          | Product model or standard used by the referenced product, such as `ODPS`, `DPDS`, or `internal`. |
 | `productModel.version`  | string | required                          | Version of the referenced product model or standard, such as ODPS `4.1`.                         |
 | `productModel.format`   | string | required                          | Format of the referenced product model, such as `yaml`, `json`, `toon` or `html`.                       |
-| `productModel.uri`      | string | required                          | URI pointing to the authoritative product definition.                                            |
+| `productModel.$ref`     | string | required                          | ODPS-aligned reference to the authoritative product definition, as a local file path or URL.      |
 
 
 
@@ -106,7 +106,7 @@ productReference:
     standard: ODPS
     version: "4.1"
     format: yaml
-    uri: https://example.org/products/urbanpulse-events/odps.yaml
+    $ref: https://example.org/products/urbanpulse-events/odps.yaml
 
   logoURL: https://example.org/assets/urbanpulse-logo.png
 
@@ -134,4 +134,3 @@ productReference:
 | `owner.role`          | string           | optional                          | Responsible role, such as Data Product Owner or Product Manager.                                                                                                                                                                                                                    |
 | `logoURL`             | string           | optional                          | URL to a logo or visual asset used in catalog display.                                                                                                                                                                                                                              |
 | `outputFileFormats`   | array of strings | optional                          | Output formats available from the product, such as `CSV`, `JSON`, `Parquet`, or `GeoJSON`.                                                                                                                                                                                          |
-

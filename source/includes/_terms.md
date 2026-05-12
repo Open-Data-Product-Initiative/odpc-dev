@@ -16,7 +16,7 @@ The terms below explain ODPC-specific usage where this specification gives a sha
 | Data need | `DataNeed` | Represented in ODPC through `UseCase.dataNeeds`. |
 | Data product graph | `DataProductGraph` | Referenced from ODPC through `Catalog.graph`; graph structures belong to [ODPG](https://opendataproducts.org/odpg-v1.0/) or another graph standard. |
 | Identifier | `Identifier` | Used in ODPC object `id` fields. |
-| Reference | `Reference` | Used in ODPC for pointers such as `ProductReference.productModel.uri` and `Catalog.graph.uri`. |
+| Reference | `Reference` | Used in ODPC for pointers such as `ProductReference.productModel.$ref` and `Catalog.graph.uri`. |
 | Owner | `Owner` | Used in ODPC `owner` fields for accountable organizations, teams, or roles. |
 | Domain | `Domain` | Used in ODPC `domains` and `scope.domains` fields for catalog grouping and filtering. |
 
@@ -26,7 +26,7 @@ The terms below explain ODPC-specific usage where this specification gives a sha
 |---|---|
 | `Catalog` | The ODPC object that implements an ODPV `DataProductCatalog`. It is the top-level portfolio container for product references, use cases, business objectives, signals, ownership, scope, lifecycle status, tags, and graph implementation metadata. |
 | `ProductReference` | An ODPC-specific lightweight catalog object that identifies a data product and points to its authoritative product definition through `productModel`. It should not duplicate full ODPS product metadata. |
-| `ProductModel` | The authoritative model or specification used to define a referenced data product, such as `ODPS`, `DPDS`, or an internal product model. In ODPC, `productModel.uri` points to the source product definition. |
+| `ProductModel` | The authoritative model or specification used to define a referenced data product, such as `ODPS`, `DPDS`, or an internal product model. In ODPC, `productModel.$ref` points to the source product definition as a local file path or URL. |
 | `Portfolio object` | A reusable ODPC object used to manage a data product portfolio. Examples include `ProductReference`, `UseCase`, `BusinessObjective`, and `Signal`. |
 | `Graph standard` | The graph standard used to implement catalog relationships through `Catalog.graph`, such as [ODPG](https://opendataproducts.org/odpg-v1.0/), `RDF`, `JSON-LD`, `GraphML`, `openCypher`, `GQL`, `Gremlin`, `GraphSON`, or `GeoSPARQL`. |
 | `Extension property` | A local or implementation-specific field whose name begins with `x-`. Extensions can add platform metadata without redefining official ODPC semantics. |

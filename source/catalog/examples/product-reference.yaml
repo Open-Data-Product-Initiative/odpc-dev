@@ -28,7 +28,7 @@ productReference:
     standard: ODPS
     version: "4.1"
     format: yaml
-    uri: https://example.org/products/urbanpulse-events/odps.yaml
+    $ref: ./odps.yaml
   outputFileFormats:
     - JSON
     - CSV

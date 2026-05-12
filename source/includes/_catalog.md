@@ -92,7 +92,7 @@ catalog:
         standard: ODPS
         version: "4.1"
         format: yaml
-        uri: https://example.org/products/urba/odps.yaml
+        $ref: ./products/urba/odps.yaml
 
   useCases:
     - id: UC-001

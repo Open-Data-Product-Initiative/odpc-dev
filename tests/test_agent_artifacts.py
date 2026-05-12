@@ -74,7 +74,17 @@ class AgentArtifactsTest(unittest.TestCase):
         product_reference = load_yaml(SOURCE / "catalog" / "examples" / "product-reference.yaml")["productReference"]
         assert_named_object(product_reference, "DP-")
         self.assertEqual(product_reference["productModel"]["standard"], "ODPS")
-        self.assertTrue(product_reference["productModel"]["uri"].startswith("https://"))
+        self.assertIn("$ref", product_reference["productModel"])
+        self.assertNotIn("uri", product_reference["productModel"])
+
+    def test_product_model_uses_ref_for_odps_aligned_file_or_url_links(self):
+        schema = load_yaml(SOURCE / "schema" / "odpc.yaml")
+        product_model = schema["$defs"]["ProductModel"]
+
+        self.assertEqual(product_model["required"], ["standard", "version", "format", "$ref"])
+        self.assertIn("$ref", product_model["properties"])
+        self.assertNotIn("uri", product_model["properties"])
+        self.assertEqual(product_model["properties"]["$ref"]["type"], "string")
 
         use_case = load_yaml(SOURCE / "catalog" / "examples" / "use-case.yaml")["useCase"]
         assert_named_object(use_case, "UC-")
