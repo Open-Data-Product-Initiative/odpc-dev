@@ -7,6 +7,7 @@ additionalProperties: false
 required:
   - schema
   - version
+  - kind
   - catalog
 properties:
   schema:
@@ -18,6 +19,10 @@ properties:
     type: string
     pattern: "^1\\.0$"
     description: ODPC specification version used by the catalog file.
+  kind:
+    type: string
+    const: Catalog
+    description: ODPC root object type. Catalog files MUST use Catalog.
   catalog:
     $ref: "#/$defs/Catalog"
 $defs:
@@ -561,9 +566,9 @@ $defs:
     type: object
     additionalProperties: false
     required:
-      - meta
+      - metadata
     properties:
-      meta:
+      metadata:
         $ref: "#/$defs/CatalogMeta"
       productReferences:
         type: array

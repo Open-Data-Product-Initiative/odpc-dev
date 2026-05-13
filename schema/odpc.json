@@ -8,6 +8,7 @@
   "required": [
     "schema",
     "version",
+    "kind",
     "catalog"
   ],
   "properties": {
@@ -21,6 +22,11 @@
       "type": "string",
       "pattern": "^1\\.0$",
       "description": "ODPC specification version used by the catalog file."
+    },
+    "kind": {
+      "type": "string",
+      "const": "Catalog",
+      "description": "ODPC root object type. Catalog files MUST use Catalog."
     },
     "catalog": {
       "$ref": "#/$defs/Catalog"
@@ -765,10 +771,10 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "meta"
+        "metadata"
       ],
       "properties": {
-        "meta": {
+        "metadata": {
           "$ref": "#/$defs/CatalogMeta"
         },
         "productReferences": {
