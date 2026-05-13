@@ -78,7 +78,7 @@
       "required": [
         "standard",
         "version",
-        "uri"
+        "$ref"
       ],
       "properties": {
         "standard": {
@@ -98,7 +98,7 @@
         "version": {
           "type": "string"
         },
-        "uri": {
+        "$ref": {
           "type": "string",
           "format": "uri"
         }

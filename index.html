@@ -593,7 +593,7 @@ ODPC should also not define graph traversal, graph analytics, or relationship se
     <span class="na">graph</span><span class="pi">:</span>
       <span class="na">standard</span><span class="pi">:</span> <span class="s">ODPG</span>
       <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0"</span>
-      <span class="na">uri</span><span class="pi">:</span> <span class="s">https://example.org/graphs/urban-mobility.graph.yaml</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s">https://example.org/graphs/urban-mobility.graph.yaml</span>
 </code></pre></div>
 <p>The first version of ODPC focuses on these objects:</p>
 
@@ -623,7 +623,7 @@ ODPC should also not define graph traversal, graph analytics, or relationship se
     <span class="na">graph</span><span class="pi">:</span>
       <span class="na">standard</span><span class="pi">:</span> <span class="s">ODPG</span>
       <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0"</span>
-      <span class="na">uri</span><span class="pi">:</span> <span class="s">https://example.org/graphs/urban-mobility.graph.yaml</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s">https://example.org/graphs/urban-mobility.graph.yaml</span>
 </code></pre></div>
 <p>ODPC is published in several forms for different users and tools. This specification provides the human-readable documentation, while the schema, catalog object records, and example files provide machine-readable resources for validation, catalog integration, AI retrieval, and automation. Use <code>odpc.yaml</code> or <code>odpc.json</code> to validate catalog files, <code>objects.jsonl</code> for lightweight object selection and retrieval, and the catalog examples when generating or repairing ODPC YAML.</p>
 
@@ -816,7 +816,7 @@ Use ODPV for stable shared vocabulary terms and relationship names.
 <li>Do not copy full ODPS product metadata into <code>ProductReference</code>.</li>
 <li>Do not invent graph relationship fields inside ODPC objects.</li>
 <li>Do not create top-level KPI objects; KPIs belong inside <code>BusinessObjective.kpis</code>.</li>
-<li>Do not treat <code>Catalog.meta.graph.uri</code> as the graph itself; it points to a graph implementation.</li>
+<li>Do not treat <code>Catalog.meta.graph.$ref</code> as the graph itself; it points to a graph implementation.</li>
 <li>Do not assume every referenced product model is ODPS; use <code>productModel.standard</code>, <code>productModel.version</code>, <code>productModel.format</code>, and <code>productModel.$ref</code>.</li>
 <li>Do not make planning decisions from <code>portfolioPriority</code> alone; combine it with use cases, objectives, signals, governance context, and graph relationships when available.</li>
 </ul>
@@ -835,7 +835,7 @@ Use ODPV for stable shared vocabulary terms and relationship names.
 
 <p>The <code>Catalog</code> object can include product references, use cases, business objectives, and signals directly as reusable catalog objects. It can also define where the catalog graph is implemented through the <code>meta.graph</code> attribute.</p>
 
-<p>The <code>meta.graph</code> attribute identifies the graph standard, version, and URI used for the catalog graph. The graph can be implemented with <a href="https://opendataproducts.org/odpg-v1.0/">ODPG</a> or another supported graph standard, such as <code>RDF</code>, <code>JSON-LD</code>, <code>GraphML</code>, <code>openCypher</code>, <code>GQL</code>, <code>Gremlin</code>, <code>GraphSON</code>, or <code>GeoSPARQL</code>.</p>
+<p>The <code>meta.graph</code> attribute identifies the graph standard, version, and reference used for the catalog graph. The graph can be implemented with <a href="https://opendataproducts.org/odpg-v1.0/">ODPG</a> or another supported graph standard, such as <code>RDF</code>, <code>JSON-LD</code>, <code>GraphML</code>, <code>openCypher</code>, <code>GQL</code>, <code>Gremlin</code>, <code>GraphSON</code>, or <code>GeoSPARQL</code>.</p>
 
 <p>The <code>Catalog</code> object should remain focused on catalog structure and portfolio organization. It should not define detailed product metadata, relationship semantics, nodes, edges, or graph rules. Detailed product definitions belong to product models such as <code>ODPS</code>. Relationship modeling belongs to the selected graph standard, with <a href="https://opendataproducts.org/odpg-v1.0/">ODPG</a> as the native standard for the OpenDataProducts.org specification family.</p>
 
@@ -952,7 +952,7 @@ Use ODPV for stable shared vocabulary terms and relationship names.
     <span class="na">graph</span><span class="pi">:</span>
       <span class="na">standard</span><span class="pi">:</span> <span class="s">ODPG</span>
       <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0"</span>
-      <span class="na">uri</span><span class="pi">:</span> <span class="s">https://example.org/graphs/urba.graph.yaml</span>
+      <span class="s">$ref</span><span class="pi">:</span> <span class="s">https://example.org/graphs/urba.graph.yaml</span>
     <span class="na">tags</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">smart-city</span>
       <span class="pi">-</span> <span class="s">mobility</span>
@@ -1086,10 +1086,10 @@ Use ODPV for stable shared vocabulary terms and relationship names.
 <td>Version of the graph standard.</td>
 </tr>
 <tr>
-<td><code>meta.graph.uri</code></td>
+<td><code>meta.graph.$ref</code></td>
 <td>string</td>
 <td style="text-align: right">✓ when <code>meta.graph</code> is used</td>
-<td>URI pointing to the graph definition.</td>
+<td>File path or URL pointing to the graph definition.</td>
 </tr>
 <tr>
 <td><code>meta.tags</code></td>
@@ -2405,7 +2405,7 @@ Use ODPV for stable shared vocabulary terms and relationship names.
 <tr>
 <td>Reference</td>
 <td><code>Reference</code></td>
-<td>Used in ODPC for pointers such as <code>ProductReference.productModel.$ref</code> and <code>Catalog.meta.graph.uri</code>.</td>
+<td>Used in ODPC for pointers such as <code>ProductReference.productModel.$ref</code> and <code>Catalog.meta.graph.$ref</code>.</td>
 </tr>
 <tr>
 <td>Owner</td>
