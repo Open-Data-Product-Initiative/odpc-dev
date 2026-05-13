@@ -138,7 +138,7 @@ catalog:
     graph:
       standard: ODPG
       version: "1.0"
-      uri: https://example.org/graphs/urban-mobility.graph.yaml
+      $ref: https://example.org/graphs/urban-mobility.graph.yaml
 ```
 
 The first version of ODPC focuses on these objects:

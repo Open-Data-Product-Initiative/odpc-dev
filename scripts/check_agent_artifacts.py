@@ -70,6 +70,10 @@ def check_schema():
     assert meta["required"] == ["id", "name", "description"], "Catalog meta required fields changed unexpectedly"
     assert "tags" in meta["properties"], "Catalog tags must be defined in meta"
     assert "tags" not in catalog["properties"], "Catalog tags must not be defined at catalog root"
+    graph_reference = schema["$defs"]["GraphReference"]
+    assert graph_reference["required"] == ["standard", "version", "$ref"], "GraphReference must require $ref"
+    assert "$ref" in graph_reference["properties"], "GraphReference must define $ref"
+    assert "uri" not in graph_reference["properties"], "GraphReference must not define uri"
     for collection in ["productReferences", "useCases", "businessObjectives", "signals"]:
         assert collection in catalog["properties"], f"Catalog missing {collection}"
 
@@ -89,6 +93,8 @@ def check_examples():
     assert_named_object(full["meta"], "CAT-", "catalog.meta")
     assert "tags" in full["meta"], "full catalog example must put tags in catalog.meta"
     assert "tags" not in full, "full catalog example must not put tags at catalog root"
+    assert "$ref" in full["meta"]["graph"], "full catalog example graph must use $ref"
+    assert "uri" not in full["meta"]["graph"], "full catalog example graph must not use uri"
     assert_named_object(full["productReferences"][0], "DP-", "productReferences[0]")
     assert_named_object(full["useCases"][0], "UC-", "useCases[0]")
     assert_named_object(full["businessObjectives"][0], "BO-", "businessObjectives[0]")

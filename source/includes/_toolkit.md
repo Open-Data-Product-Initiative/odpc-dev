@@ -16,7 +16,7 @@ catalog:
     graph:
       standard: ODPG
       version: "1.0"
-      uri: https://example.org/graphs/urban-mobility.graph.yaml
+      $ref: https://example.org/graphs/urban-mobility.graph.yaml
 ```
 
 ODPC is published in several forms for different users and tools. This specification provides the human-readable documentation, while the schema, catalog object records, and example files provide machine-readable resources for validation, catalog integration, AI retrieval, and automation. Use `odpc.yaml` or `odpc.json` to validate catalog files, `objects.jsonl` for lightweight object selection and retrieval, and the catalog examples when generating or repairing ODPC YAML.

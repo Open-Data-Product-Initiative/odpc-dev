@@ -48,7 +48,7 @@ Agents using ODPC should keep object boundaries clear:
 * Do not copy full ODPS product metadata into `ProductReference`.
 * Do not invent graph relationship fields inside ODPC objects.
 * Do not create top-level KPI objects; KPIs belong inside `BusinessObjective.kpis`.
-* Do not treat `Catalog.meta.graph.uri` as the graph itself; it points to a graph implementation.
+* Do not treat `Catalog.meta.graph.$ref` as the graph itself; it points to a graph implementation.
 * Do not assume every referenced product model is ODPS; use `productModel.standard`, `productModel.version`, `productModel.format`, and `productModel.$ref`.
 * Do not make planning decisions from `portfolioPriority` alone; combine it with use cases, objectives, signals, governance context, and graph relationships when available.
 

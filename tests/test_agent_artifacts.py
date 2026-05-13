@@ -48,6 +48,10 @@ class AgentArtifactsTest(unittest.TestCase):
         self.assertEqual(meta["required"], ["id", "name", "description"])
         self.assertIn("tags", meta["properties"])
         self.assertNotIn("tags", catalog["properties"])
+        graph_reference = schema["$defs"]["GraphReference"]
+        self.assertEqual(graph_reference["required"], ["standard", "version", "$ref"])
+        self.assertIn("$ref", graph_reference["properties"])
+        self.assertNotIn("uri", graph_reference["properties"])
         for collection in ["productReferences", "useCases", "businessObjectives", "signals"]:
             self.assertIn(collection, catalog["properties"])
 
@@ -74,6 +78,8 @@ class AgentArtifactsTest(unittest.TestCase):
         assert_named_object(catalog["meta"], "CAT-")
         self.assertIn("tags", catalog["meta"])
         self.assertNotIn("tags", catalog)
+        self.assertIn("$ref", catalog["meta"]["graph"])
+        self.assertNotIn("uri", catalog["meta"]["graph"])
         assert_named_object(catalog["productReferences"][0], "DP-")
         assert_named_object(catalog["useCases"][0], "UC-")
         assert_named_object(catalog["businessObjectives"][0], "BO-")

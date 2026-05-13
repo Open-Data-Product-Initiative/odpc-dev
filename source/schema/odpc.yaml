@@ -60,7 +60,7 @@ $defs:
     required:
       - standard
       - version
-      - uri
+      - "$ref"
     properties:
       standard:
         type: string
@@ -76,7 +76,7 @@ $defs:
           - GeoSPARQL
       version:
         type: string
-      uri:
+      "$ref":
         type: string
         format: uri
     patternProperties:

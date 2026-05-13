@@ -8,7 +8,7 @@ In ODPC, the `Catalog` object acts as the portfolio container. It helps organiza
 
 The `Catalog` object can include product references, use cases, business objectives, and signals directly as reusable catalog objects. It can also define where the catalog graph is implemented through the `meta.graph` attribute.
 
-The `meta.graph` attribute identifies the graph standard, version, and URI used for the catalog graph. The graph can be implemented with [ODPG](https://opendataproducts.org/odpg-v1.0/) or another supported graph standard, such as `RDF`, `JSON-LD`, `GraphML`, `openCypher`, `GQL`, `Gremlin`, `GraphSON`, or `GeoSPARQL`.
+The `meta.graph` attribute identifies the graph standard, version, and reference used for the catalog graph. The graph can be implemented with [ODPG](https://opendataproducts.org/odpg-v1.0/) or another supported graph standard, such as `RDF`, `JSON-LD`, `GraphML`, `openCypher`, `GQL`, `Gremlin`, `GraphSON`, or `GeoSPARQL`.
 
 The `Catalog` object should remain focused on catalog structure and portfolio organization. It should not define detailed product metadata, relationship semantics, nodes, edges, or graph rules. Detailed product definitions belong to product models such as `ODPS`. Relationship modeling belongs to the selected graph standard, with [ODPG](https://opendataproducts.org/odpg-v1.0/) as the native standard for the OpenDataProducts.org specification family.
 
@@ -80,7 +80,7 @@ catalog:
     graph:
       standard: ODPG
       version: "1.0"
-      uri: https://example.org/graphs/urba.graph.yaml
+      $ref: https://example.org/graphs/urba.graph.yaml
     tags:
       - smart-city
       - mobility
@@ -143,7 +143,7 @@ catalog:
 | `meta.graph` | object |  | Defines the graph specification used to describe relationships between catalog objects. |
 | `meta.graph.standard` | string |  | Graph standard used for the catalog graph. Default is [ODPG](https://opendataproducts.org/odpg-v1.0/) for Open Data Product Graphs. Other options: `RDF` for semantic web graphs, `JSON-LD` for linked data in JSON, `GraphML` for graph exchange, `openCypher` for property graph scripts, `GQL` for ISO property graph queries, `Gremlin` for graph traversal, `GraphSON` for TinkerPop-style graph JSON, or `GeoSPARQL` for geospatial RDF graphs. |
 | `meta.graph.version` | string | ✓ when `meta.graph` is used | Version of the graph standard. |
-| `meta.graph.uri` | string | ✓ when `meta.graph` is used | URI pointing to the graph definition. |
+| `meta.graph.$ref` | string | ✓ when `meta.graph` is used | File path or URL pointing to the graph definition. |
 | `meta.tags` | array of strings |  | Keywords used for search, grouping, filtering, and portfolio analysis. |
 | `productReferences` | array of objects |  | List of data product references included in the catalog. Each item follows the `ProductReference` object schema. |
 | `useCases` | array of objects |  | List of use cases included in the catalog. Each item follows the `UseCase` object schema. |

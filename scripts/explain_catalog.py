@@ -62,7 +62,7 @@ def render_summary(document, path):
 
     graph = meta.get("graph")
     if isinstance(graph, dict):
-        lines.append(f"Graph: {graph.get('standard', '(unknown)')} {graph.get('version', '')} {graph.get('uri', '')}".strip())
+        lines.append(f"Graph: {graph.get('standard', '(unknown)')} {graph.get('version', '')} {graph.get('$ref', '')}".strip())
     else:
         lines.append("Graph: (not set)")
 

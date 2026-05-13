@@ -16,7 +16,7 @@ The terms below explain ODPC-specific usage where this specification gives a sha
 | Data need | `DataNeed` | Represented in ODPC through `UseCase.dataNeeds`. |
 | Data product graph | `DataProductGraph` | Referenced from ODPC through `Catalog.meta.graph`; graph structures belong to [ODPG](https://opendataproducts.org/odpg-v1.0/) or another graph standard. |
 | Identifier | `Identifier` | Used in ODPC object `id` fields. |
-| Reference | `Reference` | Used in ODPC for pointers such as `ProductReference.productModel.$ref` and `Catalog.meta.graph.uri`. |
+| Reference | `Reference` | Used in ODPC for pointers such as `ProductReference.productModel.$ref` and `Catalog.meta.graph.$ref`. |
 | Owner | `Owner` | Used in ODPC `owner` fields for accountable organizations, teams, or roles. |
 | Domain | `Domain` | Used in ODPC `domains` and `scope.domains` fields for catalog grouping and filtering. |
 
