@@ -822,13 +822,16 @@ Use ODPV for stable shared vocabulary terms and relationship names.
 <li>Do not assume every referenced product model is ODPS; use <code>productModel.standard</code>, <code>productModel.version</code>, <code>productModel.format</code>, and <code>productModel.$ref</code>.</li>
 <li>Do not make planning decisions from <code>portfolioPriority</code> alone; combine it with use cases, objectives, signals, governance context, and graph relationships when available.</li>
 </ul>
-<h2 id='example-prompts-odpc-enables'>Example prompts ODPC enables</h2><div class="highlight"><pre class="highlight plaintext"><code>Validate this ODPC catalog and suggest schema-compliant repairs.
-</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>Generate ProductReference entries for all ODPS files in this folder.
-</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>Find active smart-city products that support event demand forecasting.
-</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>Identify use cases without matching product references and propose portfolio gaps.
-</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>Prepare ODPG node and relationship candidates from this ODPC catalog.
-</code></pre></div><div class="highlight"><pre class="highlight plaintext"><code>Summarize governance issues across products, owners, lifecycle statuses, and referenced product models.
-</code></pre></div><h1 id='odpc-catalog'>ODPC Catalog</h1>
+<h2 id='example-prompts-odpc-enables'>Example prompts ODPC enables</h2>
+<ul>
+<li>&quot;Validate this ODPC catalog and suggest schema-compliant repairs.&quot;</li>
+<li>&quot;Generate ProductReference entries for all ODPS files in this folder.&quot;</li>
+<li>&quot;Find active smart-city products that support event demand forecasting.&quot;</li>
+<li>&quot;Identify use cases without matching product references and propose portfolio gaps.&quot;</li>
+<li>&quot;Prepare ODPG node and relationship candidates from this ODPC catalog.&quot;</li>
+<li>&quot;Summarize governance issues across products, owners, lifecycle statuses, and referenced product models.&quot;</li>
+</ul>
+<h1 id='odpc-catalog'>ODPC Catalog</h1>
 <p>The <code>Catalog</code> object defines a reusable ODPC catalog. It provides the top-level structure for organizing product references, use cases, business objectives, signals, and catalog metadata such as ownership, scope, lifecycle status, tags, and graph implementation.</p>
 
 <p><img src="images/catalog-d58657f4.png" width="500"></p>
