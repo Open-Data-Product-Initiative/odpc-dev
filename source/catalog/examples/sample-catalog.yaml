@@ -1,0 +1,185 @@
+schema: https://opendataproducts.org/odpc-v1.0/schema/odpc.yaml
+version: '1.0'
+kind: Catalog
+catalog:
+  metadata:
+    id: CAT-SAMPLE
+    name:
+      en: Sample ODPC Catalog
+    description:
+      en: Browser-viewable sample generated from the ODPC full catalog example.
+    owner:
+      organization: Example Transport Authority
+      team: Business Analytics
+      role: Data Product Portfolio Manager
+    scope:
+      domains:
+      - smart-city
+      - mobility
+      - transport
+      geography: Abu Dhabi
+      audience:
+      - internal
+      - public
+    version: 1.0.0
+    status: active
+    graph:
+      standard: ODPG
+      version: '1.0'
+      $ref: https://example.org/graphs/urban-mobility.graph.yaml
+    tags:
+    - smart-city
+    - mobility
+    - events
+  productReferences:
+  - id: DP-001
+    productID: urbanpulse-events
+    productVersion: 1.0.0
+    name:
+      en: UrbanPulse Events Data Product
+    description:
+      en: Data product providing event information for urban analytics and citizen
+        services.
+    valueProposition:
+      en: Supports event-based mobility planning, citizen services, and urban operations.
+    visibility: public
+    status: production
+    type: dataset
+    domains:
+    - smart-city
+    - mobility
+    tags:
+    - events
+    - smart-city
+    - mobility
+    portfolioPriority: high
+    governanceProfile: structured
+    owner:
+      organization: Example Transport Authority
+      team: Urban Analytics
+      role: Data Product Owner
+    productModel:
+      standard: ODPS
+      version: '4.1'
+      format: yaml
+      $ref: ./products/urbanpulse-events/odps.yaml
+    outputFileFormats:
+    - JSON
+    - CSV
+  useCases:
+  - id: UC-001
+    name:
+      en: Event Demand Forecasting
+    description:
+      en: Forecast event-related demand to improve mobility planning and citizen services.
+    domains:
+    - smart-city
+    - mobility
+    stakeholders:
+    - Mobility Planners
+    - Event Operations Teams
+    businessChallenge:
+      en: Event demand changes quickly and affects road congestion, transit load,
+        staffing, and public service planning.
+    decision:
+      en: Decide where and when additional mobility capacity and public services are
+        needed around planned events.
+    expectedOutcome:
+      en: Better event response, reduced congestion, and improved citizen experience
+        during high-demand periods.
+    kpis:
+    - Event travel delay reduction
+    - Public transport capacity utilization
+    dataNeeds:
+      summary:
+        en: Requires event schedules, expected attendance, road congestion, public
+          transport capacity, and incident reports.
+      items:
+      - Event schedules and expected attendance
+      - Road congestion and journey time data
+      - Public transport capacity and ridership data
+    scoring:
+      businessValue: high
+      effort: medium
+      category: juicyAndWorthIt
+      score: 3.0
+    status: active
+    priority: high
+    tags:
+    - events
+    - forecasting
+    - mobility
+  businessObjectives:
+  - id: BO-001
+    name:
+      en: Improve Urban Mobility Efficiency
+    description:
+      en: Reduce travel delays and improve movement across the city through better
+        data-driven planning and operations.
+    strategicAlignment:
+    - en: Smart City Vision 2030
+    owner:
+      organization: Example Transport Authority
+      team: Business Analytics
+      role: Strategy Lead
+    expectedOutcomes:
+    - en: Shorter average travel times across key corridors.
+    kpis:
+    - id: KPI-001
+      name:
+        en: Average Travel Time Reduction
+      description:
+        en: Measures reduction in average travel time across selected mobility corridors.
+      unit: percentage
+      baseline:
+        value: 0
+        date: 2025-10-31
+      target:
+        value: 10
+        date: 2026-12-31
+    timeframe:
+      startDate: 2026-01-01
+      endDate: 2026-12-31
+    status: active
+    priority: high
+  signals:
+  - id: SIG-001
+    name:
+      en: Increasing Event Demand
+    description:
+      en: Event schedules and public search behavior show rising demand for event-related
+        mobility planning.
+    type: demand
+    source:
+      origin: mixed
+      method: search_analysis
+      system: Catalog Intelligence Agent
+      channel: search_queries
+      reference: Search trend report 2026-04
+    observedAt: 2026-04-18T09:30:00Z
+    strength: high
+    confidence: high
+    opportunity:
+      en: Improve event demand forecasting with data products that combine event,
+        mobility, and public service data.
+    impact:
+      valuePotential: high
+      urgency: medium
+      affectedDomains:
+      - mobility
+      - events
+    evidence:
+      summary:
+        en: Search and operations data show growing interest in event demand forecasting
+          and mobility planning.
+      examples:
+      - Increased searches for event congestion forecasts.
+      - Higher number of planned large public events.
+    recommendedAction:
+      en: Review current mobility data products and identify gaps in event, attendance,
+        congestion, and transit capacity data.
+    status: reviewing
+    tags:
+    - events
+    - demand
+    - mobility

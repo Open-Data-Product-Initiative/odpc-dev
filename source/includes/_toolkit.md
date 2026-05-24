@@ -55,6 +55,8 @@ Agent-oriented helper scripts are available in the source repository for maintai
 When working from the source repository, use scripts/search_objects.py for repeatable local ODPC object lookup.
 Use scripts/search_objects.py --json when another tool or agent will consume the result.
 Use scripts/validate_catalog.py to validate ODPC YAML or JSON catalog files against source/schema/odpc.yaml.
+Use scripts/build_catalog.py to generate one ODPC catalog from a folder of standalone ProductReference, UseCase, BusinessObjective, Signal, metadata, ODPS product, or full catalog YAML files.
+Use scripts/build_catalog.py --html to also generate a standalone browser-viewable catalog page; use --html-template to apply a custom editable HTML template.
 Use scripts/check_agent_artifacts.py in CI or review workflows to detect drift between schema, catalog artifacts, examples, and llms.txt.
 Use scripts/generate_catalog_artifacts.py after editing source/schema/odpc.yaml to regenerate source/schema/odpc.json; use --check in CI or review workflows.
 Use scripts/explain_catalog.py to summarize an ODPC catalog file for humans or AI agents.
@@ -66,8 +68,11 @@ Do not edit generated or derived artifacts without checking alignment across llm
 |---|---|
 | [`check_agent_artifacts.py`](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/check_agent_artifacts.py) | Checks schema alignment, example files, object JSONL records, and `llms.txt` references |
 | [`generate_catalog_artifacts.py`](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/generate_catalog_artifacts.py) | Regenerates derived catalog artifacts such as `source/schema/odpc.json` from canonical source files; use `--check` to detect drift |
+| [`build_catalog.py`](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/build_catalog.py) | Builds one ODPC catalog from a folder of standalone YAML or JSON fragments, ODPS product files, optional metadata files, and existing full catalog files; optionally renders browser-viewable HTML with `--html` and `--html-template` |
 | [`search_objects.py`](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/search_objects.py) | Searches ODPC object records by keyword or exact object id; use `--json` for machine-readable results |
 | [`validate_catalog.py`](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/validate_catalog.py) | Validates ODPC YAML or JSON catalog files against the ODPC schema |
 | [`explain_catalog.py`](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/scripts/explain_catalog.py) | Summarizes an ODPC catalog file, including counts, ids, graph reference, and modeling hints |
+
+The default HTML template is [`catalog.html`](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/blob/main/source/catalog/templates/catalog.html). Copy and edit it when a generated catalog needs organization-specific branding, layout, or styling.
 
 The Markdown tables in this specification are intended for human readers. The schema, JSONL, and YAML example files are intended for programmable use, automation, validation, AI retrieval, and catalog tooling.

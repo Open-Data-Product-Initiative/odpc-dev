@@ -39,6 +39,7 @@ Example files:
 Agent-oriented source scripts:
 - scripts/check_agent_artifacts.py checks schema alignment, example files, object JSONL records, and llms.txt references.
 - scripts/generate_catalog_artifacts.py regenerates derived catalog artifacts such as source/schema/odpc.json from canonical source/schema/odpc.yaml. Use `python scripts/generate_catalog_artifacts.py --check` to detect drift.
+- scripts/build_catalog.py builds one ODPC catalog from a folder of standalone ProductReference, UseCase, BusinessObjective, Signal, metadata, ODPS product, or full catalog YAML/JSON files. Use `python scripts/build_catalog.py ./inputs --output catalog.yaml`. Add `--html catalog.html` to render a browser-viewable page, and `--html-template source/catalog/templates/catalog.html` or another HTML file to control the look and feel.
 - scripts/search_objects.py searches /catalog/objects.jsonl by keyword or exact object id. Use `--json` for machine-readable results.
 - scripts/validate_catalog.py validates ODPC YAML or JSON catalog files against /schema/odpc.yaml. Install dependencies with `python -m pip install -r scripts/requirements-agent.txt`.
 - scripts/explain_catalog.py summarizes an ODPC catalog file for humans or AI agents, including object counts, ids, graph reference, and modeling hints.
@@ -74,7 +75,7 @@ Recommended agent workflow:
 4. Load /catalog/examples/*.yaml when generating ODPC catalog content.
 5. Load the human-readable ODPC specification when you need object definitions, examples, or attribute-level guidance.
 6. Use /schema/odpc.yaml or /schema/odpc.json to validate ODPC catalog files.
-7. If working in the source repository, use scripts/search_objects.py for repeatable local object lookup and scripts/validate_catalog.py for catalog validation.
+7. If working in the source repository, use scripts/build_catalog.py to combine a folder of ODPC YAML fragments into one catalog, add --html when the user needs a browser view, use scripts/search_objects.py for repeatable local object lookup, and scripts/validate_catalog.py for catalog validation.
 8. Use Catalog for portfolio containers and catalog-level metadata.
 9. Use ProductReference for lightweight references to data products; do not copy full ODPS product metadata into ProductReference.
 10. Use UseCase for demand, user needs, business problems, analytical needs, or operational scenarios.
