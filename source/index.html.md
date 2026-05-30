@@ -1,5 +1,5 @@
 ---
-title: Open Data Product Catalogs (ODPC) version 1.0 | Linux Foundation
+title: Open Data Product Catalogs (ODPC) version DEVELOPMENT | Linux Foundation
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -27,7 +27,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Open Data Product Catalogs (ODPC) version 1.0 is a vendor-neutral, open-source, machine-readable model for cataloging data product portfolios. ODPC defines reusable portfolio objects around data products, including product references, use cases, business objectives, KPIs, signals, and catalog items.
+    content: Open Data Product Catalogs (ODPC) version DEV is a vendor-neutral, open-source, machine-readable model for cataloging data product portfolios. ODPC defines reusable portfolio objects around data products, including product references, use cases, business objectives, KPIs, signals, and catalog items.
   - name: spec-version
     content: "1.0"
   - name: llms
@@ -38,7 +38,7 @@ meta:
 
 # OPEN DATA PRODUCT CATALOGS - The Linux Foundation
 
-## Version 1.0
+## Version DEVELOPMENT
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 ([RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119) and [RFC 8174](https://datatracker.ietf.org/doc/html/rfc8174)) when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
@@ -46,9 +46,9 @@ Development of the specification is under the umbrella of the Linux Foundation.
 
 | Topic | Link | Description |
 |---|---|---|
-| Version source | <a href="https://github.com/Open-Data-Product-Initiative/odpc-v1.0">Open Data Product Catalogs on GitHub</a> | Official source repository for the ODPC specification |
+| Version source | <a href="https://github.com/Open-Data-Product-Initiative/odpc-dev">Open Data Product Catalogs on GitHub</a> | Official source repository for the ODPC specification |
 | Knowledge Base | [Open Data Product Spec Family Knowledge Base](https://opendataproducts.org/howto/) | Practical examples, FAQs, and implementation guidance |
-| Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/odpc-v1.0/issues) | Submit issues or suggestions to the specification maintainers |
+| Contribute | [Raise an issue in GitHub](https://github.com/Open-Data-Product-Initiative/odpc-dev/issues) | Submit issues or suggestions to the specification maintainers |
 
 # Introduction
 The Open Data Product Catalogs, ODPC, is a vendor-neutral, open-source, machine-readable catalog model for data product portfolios. It defines reusable catalog objects such as data product references, use cases, business objectives, KPIs, signals, and catalog items.
