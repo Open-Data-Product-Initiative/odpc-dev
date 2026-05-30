@@ -1,5 +1,5 @@
 ---
-title: Open Data Product Catalogs (ODPC) version RC | Linux Foundation 
+title: Open Data Product Catalogs (ODPC) version 1.0 | Linux Foundation
 
 language_tabs: # must be one of https://git.io/vQNgJ
 - yaml
@@ -27,7 +27,9 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: The Open Data Product Catalogs, ODPC, is a vendor-neutral, open-source, machine-readable model for cataloging data product portfolios. ODPC defines reusable portfolio objects around data products, including product references, use cases, business objectives, KPIs, signals, and catalog items. 
+    content: Open Data Product Catalogs (ODPC) version 1.0 is a vendor-neutral, open-source, machine-readable model for cataloging data product portfolios. ODPC defines reusable portfolio objects around data products, including product references, use cases, business objectives, KPIs, signals, and catalog items.
+  - name: spec-version
+    content: "1.0"
   - name: llms
     content: /llms.txt
   - name: ai-agent-guidance
@@ -36,7 +38,7 @@ meta:
 
 # OPEN DATA PRODUCT CATALOGS - The Linux Foundation
 
-## Version RELEASE CANDIDATE 
+## Version 1.0
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “NOT RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in BCP 14 ([RFC 2119](https://datatracker.ietf.org/doc/html/rfc2119) and [RFC 8174](https://datatracker.ietf.org/doc/html/rfc8174)) when, and only when, they appear in all capitals, as shown here.
 
 The specification is shared under <a href='https://www.apache.org/licenses/LICENSE-2.0'>Apache 2.0</a> license. 
